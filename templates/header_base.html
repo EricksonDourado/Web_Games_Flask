@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Gammer</title>
+    <style>
+        .page-header{
+            background-color: #f7b600;
+	        padding: 15px;
+	        text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='bootstrap.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %} 
+            <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+
+        <div class="page-header">
+            <h2>{{ titulo }}</h2>
+        </div>
+
+        
+        {% block conteudo%}           
+        {% endblock conteudo %}
+        
+    </div>
+</body>
+</html>

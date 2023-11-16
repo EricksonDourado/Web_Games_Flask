@@ -1,0 +1,26 @@
+
+{% extends 'header_base.html' %}
+{% block conteudo %}
+<div class="container mt-3">
+    <table class="table table-striped">
+                <thead >
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Console</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for gammer in gammers %}
+                    <tr>
+                        <td>{{ gammer.nome }}</td>
+                        <td>{{ gammer.categoria }}</td>
+                        <td>{{ gammer.console }}</td>
+                    </tr>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock conteudo %}
+    
